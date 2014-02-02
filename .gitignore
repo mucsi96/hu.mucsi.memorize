@@ -6,4 +6,5 @@ public/lib
 test/coverage/
 .idea
 SetHerokuEnvVars.bat
+SetDevEnvVars.sh
 *.log
