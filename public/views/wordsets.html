@@ -1,0 +1,8 @@
+<section data-ng-controller="WordsetsController" data-ng-init="find()">
+    <ul>
+        <li data-ng-repeat="wordset in wordsets">
+            <span>{{wordset.name}}</span>
+            <span>{{wordset.words}}</span>
+        </li>
+    </ul>
+</section>
