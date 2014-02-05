@@ -1,8 +1,12 @@
 <section data-ng-controller="WordsetsController" data-ng-init="find()">
-    <ul>
-        <li data-ng-repeat="wordset in wordsets">
-            <span>{{wordset.name}}</span>
-            <span>{{wordset.words}}</span>
-        </li>
-    </ul>
+    <div class="panel panel-default">
+        <div class="panel-heading">Wordsets</div>
+        <div class="list-group">
+            <a href="#" class="list-group-item" data-ng-repeat="wordset in wordsets" >
+                <span class="badge">{{wordset.words}}</span>
+                {{wordset.name}}
+            </a>
+        </div>
+    </div>
+    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span> Add</button>
 </section>
