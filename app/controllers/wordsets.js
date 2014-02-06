@@ -13,7 +13,7 @@ exports.wordset = function (req, res, next, id) {
 };
 
 exports.all = function (req, res) {
-    Wordset.getByUserId(req.user, function (err, wordsets) {
+    Wordset.getByUser(req.user, function (err, wordsets) {
         if (err) {
             res.render('error', {
                 status: 500

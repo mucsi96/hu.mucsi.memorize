@@ -29,8 +29,8 @@ WordsetSchema.statics.getById = function(id, cb) {
     }).populate('words').exec(cb);
 };
 
-WordsetSchema.statics.getByUserId = function(userId, cb) {
-    this.find({user: userId}).sort('-created').populate('words').exec(cb);
+WordsetSchema.statics.getByUser = function(user, cb) {
+    this.find({user: user}).sort('-created').populate('words').exec(cb);
 };
 
 mongose.model('Wordset', WordsetSchema);
