@@ -3,10 +3,10 @@
         <div class="panel-heading">Wordsets</div>
         <div class="list-group">
             <a href="#" class="list-group-item" data-ng-repeat="wordset in wordsets" >
-                <span class="badge">{{wordset.words}}</span>
+                <span class="badge">{{wordset.words.length}}</span>
                 {{wordset.name}}
             </a>
         </div>
     </div>
-    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span> Add</button>
+    <button class="btn btn-success pull-right" data-ng-click="create()"><span class="glyphicon glyphicon-plus"></span> Add</button>
 </section>

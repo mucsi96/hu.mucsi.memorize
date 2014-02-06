@@ -8,4 +8,11 @@ angular.module('mean.wordsets').controller('WordsetsController',['$scope','$rout
             $scope.wordsets = wordsets;
         });
     };
+
+    $scope.create = function () {
+        var wordset = new Wordsets({
+            name: 'Test1'
+        });
+        wordset.$save($scope.find);
+    };
 }]);

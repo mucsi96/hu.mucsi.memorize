@@ -8,6 +8,11 @@ var WordsetSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    name: {
+        type: String,
+        require: true,
+        trim: true
+    },
     words: [{
         type: Schema.ObjectId,
         ref: 'Word'
