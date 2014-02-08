@@ -2,7 +2,7 @@
 
 module.exports = {
     app: {
-        name: "MEAN - A Modern Stack - Development"
+        name: "Memorize - Development"
     },
     google: {
         callbackURL: "http://localhost:3000/auth/google/callback"

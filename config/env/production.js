@@ -2,7 +2,7 @@
 
 module.exports = {
     app: {
-        name: "MEAN - A Modern Stack - Production"
+        name: "Memorize"
     },
     google: {
         callbackURL: "http://hu-mucsi-memorize.herokuapp.com/auth/google/callback"
