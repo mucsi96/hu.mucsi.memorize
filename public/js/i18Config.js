@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mean').config(['$translateProvider'], function ($translateProvider) {
+angular.module('mean').config(['$translateProvider', function ($translateProvider) {
     $translateProvider.translations('en', {
         Signin: 'Signin',
         Signout: 'Signout',
@@ -16,5 +16,5 @@ angular.module('mean').config(['$translateProvider'], function ($translateProvid
         Hungarian: 'Hungarian1'
     });
     $translateProvider.preferredLanguage('en');
-});
+}]);
 
