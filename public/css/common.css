@@ -23,3 +23,18 @@ footer {
 footer p {
     padding:5px 0 12px 10px
 }
+
+a.list-group-item .glyphicon{
+    visibility: collapse;
+    margin-right: 1.2em;
+    float: right;
+}
+
+a.list-group-item:hover .glyphicon,
+a.list-group-item:focus .glyphicon{
+    visibility: visible;
+}
+
+a {
+    cursor: pointer;
+}

@@ -39,3 +39,17 @@ exports.create = function (req, res) {
         }
     });
 };
+
+exports.destroy = function (req, res) {
+    var wordset = req.wordset;
+    wordset.remove(function (err) {
+        if (err) {
+            return res.send('/', {
+                errors: err.errors,
+                wordset: wordset
+            });
+        } else {
+            res.jsonp(wordset);
+        }
+    });
+};

@@ -15,4 +15,8 @@ angular.module('mean.wordsets').controller('WordsetsController',['$scope','$rout
         });
         wordset.$save($scope.find);
     };
+
+    $scope.remove = function (wordset) {
+        wordset.$remove($scope.find);
+    };
 }]);
