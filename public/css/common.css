@@ -24,14 +24,14 @@ footer p {
     padding:5px 0 12px 10px
 }
 
-a.list-group-item .glyphicon{
+a.list-group-item > .glyphicon{
     visibility: collapse;
     margin-right: 1.2em;
     float: right;
 }
 
-a.list-group-item:hover .glyphicon,
-a.list-group-item:focus .glyphicon{
+a.list-group-item:hover > .glyphicon,
+a.list-group-item:focus > .glyphicon{
     visibility: visible;
 }
 
@@ -46,4 +46,8 @@ a {
 .modal-footer.without-body {
     margin-top: 0;
     border-top: none;
+}
+
+.list-group-item .input-group {
+    width: 75%;
 }

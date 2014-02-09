@@ -2,12 +2,24 @@
     <div class="panel panel-default" data-ng-show="wordsets">
         <div class="panel-heading" translate>WORDSETS</div>
         <div class="list-group">
-            <a class="list-group-item" data-ng-repeat="wordset in wordsets" data-ng-click="" >
-                {{wordset.name}}
+            <a class="list-group-item clearfix" data-ng-repeat="wordset in wordsets" data-ng-click="" >
+                <span data-ng-hide="wordset.edit">{{wordset.name}}</span>
                 <span class="badge">{{wordset.words.length}}</span>
                 <span class="glyphicon glyphicon-trash" data-ng-click="remove(wordset)" stopPropagation="click"></span>
-                <span class="glyphicon glyphicon-pencil"></span>
+                <span class="glyphicon glyphicon-pencil" data-ng-hide="wordset.edit" data-ng-click="edit(wordset)"></span>
+                <span class="input-group pull-left" data-ng-show="wordset.edit">
+                    <input type="text" class="form-control" data-ng-model="wordset.editor">
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger" type="button" data-ng-click="cancelEdit(wordset)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <button class="btn btn-success" type="button" data-ng-click="acceptEdit(wordset)">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                    </span>
+                </span>
             </a>
+
         </div>
     </div>
     <span data-ng-hide="wordsets" translate>NO_WORDSETS</span>
