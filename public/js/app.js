@@ -4,4 +4,4 @@ angular.module('mean', ['ngCookies', 'ngResource', 'ngRoute', 'ui.bootstrap', 'u
 
 angular.module('mean.system', ['ui.bootstrap.modal']);
 angular.module('mean.articles', []);
-angular.module('mean.wordsets', []);
+angular.module('mean.wordsets', ['ui.keypress']);
