@@ -7,8 +7,15 @@
             <a href="#!/{{item.link}}">{{item.title}}</a>
         </li>
     </ul>
+    <ul class="navbar-nav nav pull-right">
+        <li>
+            <a href="#!/options">
+                <span class="glyphicon glyphicon-cog"></span>
+            </a>
+        </li>
+    </ul>
     <ul class="navbar-nav nav pull-right" data-ng-hide="global.authenticated">
-        <li><a href="/auth/google" translate >Signin</a>
+        <li><a href="/auth/google" translate >SIGNIN</a>
         </li>
     </ul>
     <ul class="navbar-nav nav pull-right" data-ng-show="global.authenticated">
@@ -17,19 +24,7 @@
 				{{global.user.name}} <b class="caret"></b>
 			</a>
             <ul class="dropdown-menu">
-                <li><a href="/signout" translate >Signout</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <ul class="navbar-nav nav pull-right">
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{'Language' | translate}}
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li data-ng-repeat="language in languages" ng-class="{active: language.active}">
-                    <a data-ng-click="changeLanguage(language.key)">{{language.name | translate}}</a>
+                <li><a href="/signout" translate >SIGNOUT</a>
                 </li>
             </ul>
         </li>

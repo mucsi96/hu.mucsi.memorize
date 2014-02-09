@@ -4,6 +4,9 @@
 angular.module('mean').config(['$routeProvider', function($routeProvider) {
     if (window.user) {
         $routeProvider.
+            when('/options', {
+                templateUrl: 'views/options.html'
+            }).
             when('/', {
                 templateUrl: 'views/wordsets.html'
             }).
@@ -12,6 +15,9 @@ angular.module('mean').config(['$routeProvider', function($routeProvider) {
             });
     } else {
         $routeProvider.
+            when('/options', {
+                templateUrl: 'views/options.html'
+            }).
             when('/', {
                 templateUrl: 'views/index.html'
             }).

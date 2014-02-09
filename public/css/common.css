@@ -38,3 +38,7 @@ a.list-group-item:focus .glyphicon{
 a {
     cursor: pointer;
 }
+
+.panel-heading .glyphicon {
+    margin-right: 0.8em;
+}

@@ -1,6 +1,6 @@
 <section data-ng-controller="WordsetsController" data-ng-init="find()">
     <div class="panel panel-default" data-ng-show="wordsets">
-        <div class="panel-heading">Wordsets</div>
+        <div class="panel-heading" translate>WORDSETS</div>
         <div class="list-group">
             <a class="list-group-item" data-ng-repeat="wordset in wordsets" data-ng-click="" >
                 {{wordset.name}}
@@ -10,6 +10,9 @@
             </a>
         </div>
     </div>
-    <span data-ng-hide="wordsets">You don't have any wordsets jet. Create one by clicking on "Add" button.</span>
-    <button class="btn btn-success pull-right" data-ng-click="create()"><span class="glyphicon glyphicon-plus"></span> Add</button>
+    <span data-ng-hide="wordsets" translate>NO_WORDSETS</span>
+    <button class="btn btn-success pull-right" data-ng-click="create()">
+        <span class="glyphicon glyphicon-plus"></span>
+        <span translate>ADD</span>
+    </button>
 </section>
