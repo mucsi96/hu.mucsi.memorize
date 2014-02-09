@@ -42,3 +42,8 @@ a {
 .panel-heading .glyphicon {
     margin-right: 0.8em;
 }
+
+.modal-footer.without-body {
+    margin-top: 0;
+    border-top: none;
+}

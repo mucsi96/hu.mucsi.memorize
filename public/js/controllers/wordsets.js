@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mean.wordsets').controller('WordsetsController',['$scope','$routeParams','$location','Global','Wordsets', function ($scope, $routeParams, $location, Global, Wordsets) {
+angular.module('mean.wordsets').controller('WordsetsController',['$scope','$routeParams','$location','Global','Wordsets', '$modal', function ($scope, $routeParams, $location, Global, Wordsets, $modal) {
     $scope.global = Global;
 
     $scope.find = function () {
@@ -17,6 +17,13 @@ angular.module('mean.wordsets').controller('WordsetsController',['$scope','$rout
     };
 
     $scope.remove = function (wordset) {
-        wordset.$remove($scope.find);
+        var modalInstance = $modal.open({
+            templateUrl: 'views/removeConfirm.html',
+            controller: 'RemoveConfirmController'
+        });
+
+        modalInstance.result.then(function () {
+            wordset.$remove($scope.find);
+        });
     };
 }]);

@@ -13,7 +13,10 @@ angular.module('mean').config(['$translateProvider', function ($translateProvide
         PLEASE_SIGN_IN: 'Please sign in',
         WORDSETS: 'Word sets',
         NO_WORDSETS: 'You don\'t have any word sets yet. Create one by clicking on "Add" button.',
-        ADD: 'Add'
+        ADD: 'Add',
+        CONFIRM_DELETE: 'Do you really want to delete this item?',
+        DELETE: 'Delete',
+        CANCEL: 'Cancel'
     });
     $translateProvider.translations('hu', {
         SIGNIN: 'Belépés',
@@ -25,9 +28,12 @@ angular.module('mean').config(['$translateProvider', function ($translateProvide
         OPTIONS: 'Beállítások',
         BACK: 'Vissza',
         PLEASE_SIGN_IN: 'Kérem lépjen be',
-        WORDSETS: 'Szó készletek',
+        WORDSETS: 'Szókészletek',
         NO_WORDSETS: 'Önnek még nincs szókészlete. Létrehozáshoz, kattintson a "Hozzáadás" gombra.',
-        ADD: 'Hozzáadás'
+        ADD: 'Hozzáadás',
+        CONFIRM_DELETE: 'Valóban törölni akarja ezt a elemet?',
+        DELETE: 'Törlés',
+        CANCEL: 'Mégsem'
     });
     $translateProvider.translations('ru', {
         SIGNIN: 'Войти',
@@ -41,7 +47,10 @@ angular.module('mean').config(['$translateProvider', function ($translateProvide
         PLEASE_SIGN_IN: 'Пожалуйста, войдите',
         WORDSETS: 'Группы слов',
         NO_WORDSETS: 'У вас нет группы слов. Создайте его, нажав на кнопку "Добавить".',
-        ADD: 'Добавить'
+        ADD: 'Добавить',
+        CONFIRM_DELETE: 'Вы действительно хотите удалить этот элемент?',
+        DELETE: 'Удалить',
+        CANCEL: 'Отменить'
     });
     $translateProvider.preferredLanguage('en');
     $translateProvider.useCookieStorage();
