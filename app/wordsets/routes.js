@@ -1,7 +1,7 @@
 'use strict';
 
 var controller = require('./controller'),
-    authorization = require('./controller');
+    authorization = require('../users/controller');
 
 module.exports = function (app) {
     app.get('/wordsets', authorization.requiresLogin, controller.all);
