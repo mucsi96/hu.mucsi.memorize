@@ -18,7 +18,7 @@ angular.module('mean.wordsets').controller('WordsetsController',['$scope','$rout
 
     $scope.remove = function (wordset) {
         var modalInstance = $modal.open({
-            templateUrl: 'views/removeConfirm.html',
+            templateUrl: 'common/removeConfirm.html',
             controller: 'RemoveConfirmController'
         });
 

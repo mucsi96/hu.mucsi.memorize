@@ -12,20 +12,20 @@ module.exports = function(grunt) {
                 }
             },
             js: {
-                files: ['gruntfile.js', 'app/**/*.js', 'public/js/**'],
+                files: ['gruntfile.js', 'app/**/*.js', 'public/**/*.js'],
                 tasks: ['jshint'],
                 options: {
                     livereload: true
                 }
             },
             html: {
-                files: ['public/views/**'],
+                files: ['public/**/*.html'],
                 options: {
                     livereload: true
                 }
             },
             css: {
-                files: ['public/css/**'],
+                files: ['public/**/*.css'],
                 options: {
                     livereload: true
                 }
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
         },
         jshint: {
             all: {
-                src: ['gruntfile.js', 'app/**/*.js', 'public/js/**'],
+                src: ['gruntfile.js', 'app/**/*.js', 'public/**/*.js','!public/lib/**/*.js'],
                 options: {
                     jshintrc: true
                 }

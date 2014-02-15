@@ -11,26 +11,21 @@ script(type='text/javascript', src='/lib/angular-bootstrap/ui-bootstrap.js')
 script(type='text/javascript', src='/lib/angular-bootstrap/ui-bootstrap-tpls.js')
 script(type='text/javascript', src='/lib/angular-ui-utils/ui-utils.min.js')
 
-//Application Init
-script(type='text/javascript', src='/js/app.js')
-script(type='text/javascript', src='/js/routeConfig.js')
-script(type='text/javascript', src='/js/i18Config.js')
-script(type='text/javascript', src='/js/directives.js')
-script(type='text/javascript', src='/js/filters.js')
+//Application
+script(type='text/javascript', src='/core/init.js')
+script(type='text/javascript', src='/core/app.js')
+script(type='text/javascript', src='/config/route.js')
+script(type='text/javascript', src='/config/i18.js')
+script(type='text/javascript', src='/common/directives.js')
+script(type='text/javascript', src='/common/filters.js')
+script(type='text/javascript', src='/common/globalService.js')
+script(type='text/javascript', src='/common/removeConfirmController.js')
+script(type='text/javascript', src='/index/controller.js')
+script(type='text/javascript', src='/header/controller.js')
+script(type='text/javascript', src='/options/controller.js')
+script(type='text/javascript', src='/wordsets/service.js')
+script(type='text/javascript', src='/wordsets/controller.js')
 
-//Application Services
-script(type='text/javascript', src='/js/services/global.js')
-script(type='text/javascript', src='/js/services/articles.js')
-script(type='text/javascript', src='/js/services/wordsets.js')
-
-//Application Controllers
-script(type='text/javascript', src='/js/controllers/articles.js')
-script(type='text/javascript', src='/js/controllers/wordsets.js')
-script(type='text/javascript', src='/js/controllers/options.js')
-script(type='text/javascript', src='/js/controllers/removeConfirm.js')
-script(type='text/javascript', src='/js/controllers/index.js')
-script(type='text/javascript', src='/js/controllers/header.js')
-script(type='text/javascript', src='/js/init.js')
 
 if (process.env.NODE_ENV == 'development')
     //Livereload script rendered

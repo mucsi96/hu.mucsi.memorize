@@ -5,10 +5,10 @@ angular.module('mean').config(['$routeProvider', function($routeProvider) {
     if (window.user) {
         $routeProvider.
             when('/options', {
-                templateUrl: 'views/options.html'
+                templateUrl: 'options/markup.html'
             }).
             when('/', {
-                templateUrl: 'views/wordsets.html'
+                templateUrl: 'wordsets/markup.html'
             }).
             otherwise({
                 redirectTo: '/'
@@ -16,10 +16,10 @@ angular.module('mean').config(['$routeProvider', function($routeProvider) {
     } else {
         $routeProvider.
             when('/options', {
-                templateUrl: 'views/options.html'
+                templateUrl: 'options/markup.html'
             }).
             when('/', {
-                templateUrl: 'views/index.html'
+                templateUrl: 'index/markup.html'
             }).
             otherwise({
                 redirectTo: '/'
