@@ -1,24 +1,19 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    LocalStrategy = require('passport-local').Strategy,
-    TwitterStrategy = require('passport-twitter').Strategy,
-    FacebookStrategy = require('passport-facebook').Strategy,
-    GitHubStrategy = require('passport-github').Strategy,
     GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
     User = mongoose.model('User'),
-    config = require('./config');
-
+    config = require('../config/config');
 
 module.exports = function(passport) {
-    
+
     // Serialize the user id to push into the session
     passport.serializeUser(function(user, done) {
         done(null, user.id);
     });
 
-    // Deserialize the user object based on a pre-serialized token
-    // which is the user id
+// Deserialize the user object based on a pre-serialized token
+// which is the user id
     passport.deserializeUser(function(id, done) {
         User.findOne({
             _id: id

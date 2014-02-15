@@ -2,12 +2,10 @@
 
 // Utilize Lo-Dash utility library
 var _ = require('lodash');
-var envConf = require(__dirname + '/../config/env/' + process.env.NODE_ENV + '.js') || {}
-var path = require('path');
-var rootPath = path.normalize(__dirname + '/..');
+var envConf = require(__dirname + '/../config/env/' + process.env.NODE_ENV + '.js') || {};
+
 
 module.exports = _.merge({
-    root: rootPath,
     port: process.env.PORT || 3000,
     db: process.env.MONGOHQ_URL,
     google: {

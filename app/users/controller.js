@@ -7,6 +7,16 @@ var mongoose = require('mongoose'),
     User = mongoose.model('User');
 
 /**
+ * Generic require login routing middleware
+ */
+exports.requiresLogin = function(req, res, next) {
+    if (!req.isAuthenticated()) {
+        return res.send(401, 'User is not authorized');
+    }
+    next();
+};
+
+/**
  * Auth callback
  */
 exports.authCallback = function(req, res) {

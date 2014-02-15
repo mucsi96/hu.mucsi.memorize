@@ -7,7 +7,7 @@ var express = require('express'),
     mongoStore = require('connect-mongo')(express),
     flash = require('connect-flash'),
     helpers = require('view-helpers'),
-    config = require('./config');
+    config = require('../config/config');
 
 module.exports = function(app, passport, db) {
     app.set('showStackError', true);
@@ -32,11 +32,11 @@ module.exports = function(app, passport, db) {
     }
 
     // Set views path, template engine and default layout
-    app.set('views', config.root + '/app/views');
+    app.set('views', process.cwd() + '/app/views');
     app.set('view engine', 'jade');
 
     // Enable jsonp
-    app.enable("jsonp callback");
+    app.enable('jsonp callback');
 
     app.configure(function() {
         // The cookieParser should be above session
@@ -71,7 +71,7 @@ module.exports = function(app, passport, db) {
         
         // Setting the fav icon and static folder
         app.use(express.favicon());
-        app.use(express.static(config.root + '/public'));
+        app.use(express.static(process.cwd() + '/public'));
 
         // Assume "not found" in the error msgs is a 404. this is somewhat
         // silly, but valid, you can do whatever you like, set properties,
@@ -90,7 +90,7 @@ module.exports = function(app, passport, db) {
         });
 
         // Assume 404 since no middleware responded
-        app.use(function(req, res, next) {
+        app.use(function(req, res) {
             res.status(404).render('404', {
                 url: req.originalUrl,
                 error: 'Not found'
