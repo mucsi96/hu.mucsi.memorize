@@ -17,3 +17,29 @@ angular.module('mean').directive('stopPropagation', function() {
         }
     };
 });
+
+angular.module('mean').directive('onEnterPress',function () {
+    return {
+        restrict: 'A',
+        link: function (scope, elem, attrs) {
+            elem.bind('keyup', function () {
+                if (event.keyCode === 13) {
+                    scope.$eval(attrs.onEnterPress);
+                }
+            });
+        }
+    };
+});
+
+angular.module('mean').directive('onEscPress',function () {
+    return {
+        restrict: 'A',
+        link: function (scope, elem, attrs) {
+            elem.bind('keyup', function () {
+                if (event.keyCode === 27) {
+                    scope.$eval(attrs.onEscPress);
+                }
+            });
+        }
+    };
+});

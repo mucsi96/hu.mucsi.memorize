@@ -41,5 +41,6 @@ angular.module('mean.wordsets').controller('WordsetsController',['$scope','$rout
     $scope.cancelEdit = function (wordset) {
         wordset.editor = null;
         wordset.edit = false;
+        wordset.$update($scope.find);
     };
 }]);

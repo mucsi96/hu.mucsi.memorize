@@ -8,7 +8,7 @@
                 <span class="glyphicon glyphicon-trash" data-ng-click="remove(wordset)" stopPropagation="click"></span>
                 <span class="glyphicon glyphicon-pencil" data-ng-hide="wordset.edit" data-ng-click="edit(wordset)"></span>
                 <span class="input-group pull-left" data-ng-show="wordset.edit">
-                    <input type="text" class="form-control" data-ng-model="wordset.editor" ui-keypress="{13:'acceptEdit(wordset)'}">
+                    <input type="text" class="form-control" data-ng-model="wordset.editor" on-enter-press="acceptEdit(wordset)" on-esc-press="cancelEdit(wordset)">
                     <span class="input-group-btn">
                         <button class="btn btn-danger" type="button" data-ng-click="cancelEdit(wordset)">
                             <span class="glyphicon glyphicon-remove"></span>
