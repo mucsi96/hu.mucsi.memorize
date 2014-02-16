@@ -27,20 +27,8 @@ angular.module('mean.wordsets').controller('WordsetsController',['$scope','$rout
         });
     };
 
-    $scope.edit = function (wordset) {
-        wordset.editor = wordset.name;
-        wordset.edit = true;
-    };
-
-    $scope.acceptEdit = function (wordset) {
-        wordset.name = wordset.editor;
-        wordset.edit = false;
-        wordset.$update($scope.find);
-    };
-
-    $scope.cancelEdit = function (wordset) {
-        wordset.editor = null;
-        wordset.edit = false;
-        wordset.$update($scope.find);
+    $scope.update = function (wordset) {
+        console.log(wordset);
+        wordset.$update();
     };
 }]);
