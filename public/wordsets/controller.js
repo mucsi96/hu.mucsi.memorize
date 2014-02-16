@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mean.wordsets').controller('WordsetsController',['$scope','$routeParams','$location','Global','Wordsets', '$modal', function ($scope, $routeParams, $location, Global, Wordsets, $modal) {
+angular.module('mean.wordsets').controller('WordsetsController',['$scope','$routeParams','$location','Global','Wordsets', '$modal', '$translate', function ($scope, $routeParams, $location, Global, Wordsets, $modal, $translate) {
     $scope.global = Global;
 
     $scope.find = function () {
@@ -11,7 +11,7 @@ angular.module('mean.wordsets').controller('WordsetsController',['$scope','$rout
 
     $scope.create = function () {
         var wordset = new Wordsets({
-            name: 'Test1'
+            name: $translate('NEW_WORDSET')
         });
         wordset.$save($scope.find);
     };
