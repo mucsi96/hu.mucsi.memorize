@@ -15,10 +15,10 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
 
     $scope.signIn = function() {
         // center the popup window
-        var left = screen.width/2 - 200
-            , top = screen.height/2 - 250
-            , popup = $window.open('/auth/google', '', "top=" + top + ",left=" + left + ",width=400,height=500")
-            , interval = 1000;
+        var left = screen.width/2 - 200,
+            top = screen.height/2 - 250,
+            popup = $window.open('/auth/google', '', 'top=' + top + ',left=' + left + ',width=400,height=500'),
+            interval = 1000;
 
         // create an ever increasing interval to check a certain global value getting assigned in the popup
         var i = $interval(function(){
@@ -32,5 +32,5 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
                 console.error(e);
             }
         }, interval);
-    }
+    };
 }]);
