@@ -15,7 +15,8 @@
         </li>
     </ul>
     <ul class="navbar-nav nav pull-right" data-ng-hide="global.authenticated">
-        <li><a href="/auth/google" translate >SIGNIN</a>
+        <li>
+            <a href ng-click="signIn()">Sign in</a>
         </li>
     </ul>
     <ul class="navbar-nav nav pull-right" data-ng-show="global.authenticated">

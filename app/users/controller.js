@@ -20,7 +20,9 @@ exports.requiresLogin = function(req, res, next) {
  * Auth callback
  */
 exports.authCallback = function(req, res) {
-    res.redirect('/');
+    var output = '<html><head></head><body onload="window.close();">Close this window</body></html>';
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end(output);
 };
 
 /**
