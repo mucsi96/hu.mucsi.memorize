@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <title></title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+        <meta name="keywords" content="node.js, express, mongoose, mongodb, angularjs"/>
+        <meta name="description" content="Simple app for learning new language by memorizing new words"/>
+        <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAzMzMAJT2/wBq8PwAR+38AML6/wAA6v8AI+v8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEQAAAAAAAAERAAAAAAcAAREABwAAAHABEQBwAAAAAGJVYAAAB3AGc1I2AHcAAGdyVTRgAAAAZ0VVNGAAAABnQiU0YAAHcGdDI0RwdwAAZ3Q0Q3AAAAAGd0R3AAAABwBnd3AHAABwAAAAAABwD//wAA/v8AAPx/AAD8fwAA3HcAAOxvAAD4PwAAMBkAAOAPAADgDwAA4A8AACAJAADgDwAA8B8AANg3AAC/+wAA" rel="shortcut icon" type="image/x-icon"/>
+        <meta property="fb:app_id" content="APP_ID"/>
+        <meta property="og:title" content="undefined"/>
+        <meta property="og:description" content="Simple app for learning new language by memorizing new words"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="APP_URL"/>
+        <meta property="og:image" content="APP_LOGO"/>
+        <meta property="og:site_name" content="undefined"/>
+        <meta property="fb:admins" content="APP_ADMIN"/>
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/common/main.css"/>
+        <!--if lt IE 9script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+        -->
+    </head>
+    <body>
+        <div data-ng-include="'header/markup.html'" data-role="navigation" class="navbar navbar-inverse navbar-fixed-top"></div>
+        <section class="content">
+            <section class="container">
+                <section data-ng-view="data-ng-view"></section>
+            </section>
+        </section>
+        <!--AngularJS-->
+    <script type="text/javascript" src="/lib/angular/angular.js"></script>
+    <script type="text/javascript" src="/lib/angular-cookies/angular-cookies.js"></script>
+    <script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="/lib/angular-translate/angular-translate.js"></script>
+    <script type="text/javascript" src="/lib/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+    <!--Angular UI-->
+    <script type="text/javascript" src="/lib/angular-bootstrap/ui-bootstrap.js"></script>
+    <script type="text/javascript" src="/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="/lib/angular-ui-utils/ui-utils.min.js"></script>
+    <!--Application-->
+    <script type="text/javascript" src="/core/init.js"></script>
+    <script type="text/javascript" src="/core/app.js"></script>
+    <script type="text/javascript" src="/config/route.js"></script>
+    <script type="text/javascript" src="/config/i18.js"></script>
+    <script type="text/javascript" src="/common/directives.js"></script>
+    <script type="text/javascript" src="/common/filters.js"></script>
+    <script type="text/javascript" src="/common/globalService.js"></script>
+    <script type="text/javascript" src="/common/removeConfirmController.js"></script>
+    <script type="text/javascript" src="/index/controller.js"></script>
+    <script type="text/javascript" src="/header/controller.js"></script>
+    <script type="text/javascript" src="/options/controller.js"></script>
+    <script type="text/javascript" src="/wordsets/service.js"></script>
+    <script type="text/javascript" src="/wordsets/controller.js"></script>
+    </body>
+</html>
