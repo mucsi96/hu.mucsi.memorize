@@ -50,7 +50,7 @@ describe('/auth...', function () {
                 .get('/auth/signout')
                 .end(function(err, res) {
                     if (err) {
-                        throw err;;
+                        throw err;
                     }
                     res.body.should.have.property('signedIn');
                     res.body.signedIn.should.be.false;
