@@ -33,6 +33,9 @@ passport.use(new GoogleStrategy({
 ));
 
 app.configure(function() {
+    app.use(express.session({
+        secret: GOOGLE_CLIENT_SECRET
+    }));
     app.use(passport.initialize());
     app.use(passport.session());
 });
@@ -49,7 +52,9 @@ app.get('/auth', function(req, res) {
 
 app.get('/auth/signout', function(req, res) {
     req.logout();
-    res.end();
+    res.json({
+        signedIn: false
+    });
 });
 
 app.get('/auth/google', passport.authenticate('google', {

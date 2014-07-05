@@ -7,7 +7,6 @@ var express = require('express'),
     mongoose = require('mongoose'),
     mongoStore = require('connect-mongo')(express),
     flash = require('connect-flash'),
-    helpers = require('view-helpers'),
     config = require('./config'),
     glob = require('glob'),
     auth = require('./auth');
@@ -61,15 +60,7 @@ app.configure(function() {
     app.use(express.urlencoded());
     app.use(express.json());
     app.use(express.methodOverride());
-    app.use(express.session({
-        secret: config.sessionSecret,
-        store: new mongoStore({
-            db: db.connection.db,
-            collection: config.sessionCollection
-        })
-    }));
     app.use(auth);
-    app.use(helpers(config.app.name));
     app.use(flash());
     app.use(app.router);
     app.use(express.favicon());
@@ -95,7 +86,7 @@ app.configure(function() {
 
 });
 
-var port = process.env.PORT || config.port;
+var port = process.env.PORT || 3000;
 app.listen(port);
 console.log('Express app started on port ' + port);
 
