@@ -30,4 +30,8 @@ WordsetSchema.statics.getByUser = function(user, cb) {
     this.find({userId: user.id}).sort('created').populate('words').exec(cb);
 };
 
+WordsetSchema.statics.removeAllByUser = function(user, cb) {
+    this.find({userId: user.id}).remove().exec(cb);
+};
+
 mongose.model('Wordset', WordsetSchema);

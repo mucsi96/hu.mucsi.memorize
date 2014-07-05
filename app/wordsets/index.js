@@ -1,6 +1,8 @@
 'use strict';
 
+require('../words/model');
 require('./model');
+
 
 var express = require('express'),
     wordsets = require('./controller'),

@@ -7,7 +7,7 @@ var should = require('should'),
 passportStub.install(app);
 
 describe('/auth...', function () {
-    describe('/auth', function () {
+    describe('GET /auth', function () {
         it('should return not signed profile', function (done) {
             SUT
                 .get('/auth')
@@ -41,7 +41,7 @@ describe('/auth...', function () {
         });
     });
 
-    describe('/auth/signout', function () {
+    describe('GET /auth/signout', function () {
         it('should sign out', function (done) {
               passportStub.login({
                   name: 'testUser'
@@ -54,6 +54,7 @@ describe('/auth...', function () {
                     }
                     res.body.should.have.property('signedIn');
                     res.body.signedIn.should.be.false;
+                    passportStub.logout();
                     done();
                 })
         });
