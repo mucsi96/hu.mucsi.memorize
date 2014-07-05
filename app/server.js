@@ -3,7 +3,11 @@
 var express = require('express'),
     config = require('./config'),
     auth = require('./auth'),
+    wordsets = require('./wordsets'),
+    mongoose = require('mongoose'),
     app = express();
+
+mongoose.connect(config.db);
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -25,6 +29,7 @@ app.configure(function() {
     app.use(express.json());
     app.use(express.methodOverride());
     app.use(auth);
+    app.use(wordsets);
     app.use(app.router);
     app.use(express.favicon());
     app.use(express.static(process.cwd() + '/public'));
@@ -36,3 +41,5 @@ app.configure(function() {
 var port = process.env.PORT || 3000;
 app.listen(port);
 console.log('Express app started on port ' + port);
+
+module.exports = app;

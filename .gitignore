@@ -7,4 +7,5 @@ test/coverage/
 .idea
 SetHerokuEnvVars.bat
 StartDev.sh
+StartTest.sh
 *.log

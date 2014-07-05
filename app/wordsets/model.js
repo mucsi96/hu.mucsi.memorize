@@ -17,10 +17,7 @@ var WordsetSchema = new Schema({
         type: Schema.ObjectId,
         ref: 'Word'
     }],
-    user: {
-        type: Schema.ObjectId,
-        ref: 'User'
-    }
+    userId: String
 });
 
 WordsetSchema.statics.getById = function(id, cb) {
@@ -30,7 +27,7 @@ WordsetSchema.statics.getById = function(id, cb) {
 };
 
 WordsetSchema.statics.getByUser = function(user, cb) {
-    this.find({user: user}).sort('created').populate('words').exec(cb);
+    this.find({userId: user.id}).sort('created').populate('words').exec(cb);
 };
 
 mongose.model('Wordset', WordsetSchema);

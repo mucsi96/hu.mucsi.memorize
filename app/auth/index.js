@@ -1,5 +1,6 @@
 var express = require('express'),
     passport = require('passport'),
+    extend = require('extend'),
     app = express(),
     GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
     GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID,
@@ -21,12 +22,10 @@ passport.use(new GoogleStrategy({
     function(accessToken, refreshToken, profile, done) {
         process.nextTick(function () {
             return done(null, {
-                signedIn: true,
-                provider: 'google',
-                user: {
-                    name: profile.displayName,
-                    email: profile.emails[0].value
-                }
+                id: profile.id,
+                name: profile.displayName,
+                email: profile.emails[0].value,
+                provider: 'google'
             });
         });
     }
@@ -42,7 +41,9 @@ app.configure(function() {
 
 app.get('/auth', function(req, res) {
     if (req.isAuthenticated()) {
-        res.json(req.user)
+        res.json(extend({
+            signedIn: true
+        }, req.user))
     } else {
         res.json({
             signedIn: false
