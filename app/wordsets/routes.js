@@ -1,13 +1,13 @@
 'use strict';
 
-var controller = require('./controller'),
-    auth = require('../auth/controller');
+var wordsets = require('./controller'),
+    auth = require('../auth');
 
 module.exports = function (app) {
-    app.get('/wordsets', auth.requiresLogin, controller.all);
-    app.post('/wordsets', auth.requiresLogin, controller.create);
-    app.del('/wordsets/:wordsetId', auth.requiresLogin, controller.destroy);
-    app.put('/wordsets/:wordsetId', auth.requiresLogin, controller.update);
+    app.get('/wordsets', auth.requiresLogin, wordsets.all);
+    app.post('/wordsets', auth.requiresLogin, wordsets.create);
+    app.del('/wordsets/:wordsetId', auth.requiresLogin, wordsets.destroy);
+    app.put('/wordsets/:wordsetId', auth.requiresLogin, wordsets.update);
 
-    app.param('wordsetId', controller.wordset);
+    app.param('wordsetId', wordsets.wordset);
 };
